@@ -11,6 +11,8 @@ export default function createStore(reducer) {
     render();
   }
 
+  dispatch({type:"@@INIT"})
+
   function getState(){
     return state;
   }
@@ -21,12 +23,9 @@ export default function createStore(reducer) {
   };
 }
 
-// let store = createStore(candyReducer);
-candyStore.dispatch({type: "@@INIT"})
 
 
 
 function render() {
   const container = document.getElementById('container');
-  container.textContent = candyStore.getState().count
 }
